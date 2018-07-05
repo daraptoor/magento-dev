@@ -2,9 +2,6 @@
 body {
   font-family: Futura;
 }
-.logo img {
-
-}
 .menulogo {
   padding-top: 41px;
 }
@@ -693,6 +690,62 @@ span.shareProd-1 a {
   line-height: 0.88;
   color: #666666;
 }
+#product-review-container .block-title, #tab-label-reviews-title {
+  display: none;
+}
+.product.data.items #reviews{
+  background: #fcfcfc;
+  margin: 0px;
+  padding: 0 100px 0 100px;
+}
+.product-reviews-summary{
+  display: flex;
+  justify-content: space-between;
+}
+.wrAriview{
+  background: #ffb000;
+  padding: 10px 25px;
+  font-family: Futura;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #ffffff !important;
+    text-decoration: none !important;
+}
+.reviewSpan {
+  font-family: Futura;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.08;
+  letter-spacing: normal;
+  color: #666666;
+}
+.alignLeft{
+  float: left;
+}
+.hidden{
+  display: none !important;
+}
+.review-ratings{
+  max-width: 100%;
+  text-align: left;
+}
+.review-details-label{
+  position: initial !important;
+  width: auto;
+}
+.rating-summary.item{
+  text-align: left;
+}
+
+
+
 
 
 /* Responsive  */

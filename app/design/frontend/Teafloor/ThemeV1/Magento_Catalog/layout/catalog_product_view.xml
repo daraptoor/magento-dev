@@ -19,7 +19,10 @@
 <move element="view.addto.wishlist" destination="product.info.options.wrapper.bottom" after="product.info.addtocart"/>
 <move element="product.attributes" destination="alert.urls" after="-"/>
 <move element="product.info.description" destination="content.aside" after="-"/>
+<move element="product.info.review" destination="reviews.tab" before="-"/>
 <!-- <move element="reviews.tab" destination="content.aside" after="-"/> -->
 <!-- <move element="product.review.form.fields.before" destination="content.aside" after="-"/> -->
+
+
 </body>
 </page>

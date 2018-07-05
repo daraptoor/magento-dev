@@ -6,9 +6,11 @@
 
 /** @var \Magento\Review\Block\Product\Review $block */
 ?>
-<div id="product-review-container" data-role="product-review"></div>
+    <h3 class="pageTitle">Customer Reviews</h3>
+<div class="reviewForm">
 <?= $block->getChildHtml() ?>
-
+</div>
+<div id="product-review-container" data-role="product-review" title="review"></div>
 
 
 <script type="text/x-magento-init">
