@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+<body>
+<!-- this is code to add new tab start -->
+<referenceBlock name="product.info.details">
+<block class="Magento\Catalog\Block\Product\View" name="deliveryinfo.tab" as="deliveryinfo" template="product/view/delivery_info.phtml" group="detailed_info" >
+<arguments>
+<argument translate="true" name="title" xsi:type="string">Delivery Information</argument>
+</arguments>
+</block>
+
+</referenceBlock>
+<!-- this is code to add new tab end -->
+<referenceBlock name="product.info.review" remove="false"/>
+<referenceBlock name="view.addto.compare" remove="true"/>
+<referenceBlock name="product.info.mailto" remove="true"/>
+<!-- <referenceBlock name="product.info.details" remove="true"/> -->
+<move element="product.info.overview" destination="alert.urls" after="-"/>
+<move element="view.addto.wishlist" destination="product.info.options.wrapper.bottom" after="product.info.addtocart"/>
+<move element="product.attributes" destination="alert.urls" after="-"/>
+<move element="product.info.description" destination="content.aside" after="-"/>
+<!-- <move element="reviews.tab" destination="content.aside" after="-"/> -->
+<!-- <move element="product.review.form.fields.before" destination="content.aside" after="-"/> -->
+</body>
+</page>

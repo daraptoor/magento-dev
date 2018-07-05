@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Search</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.4625645,14.0501328 L21.6428489,20.2513717 C21.8375914,20.4467745 21.8372729,20.7629832 21.6421372,20.9579934 L20.9482742,21.6514099 C20.7530973,21.8464612 20.436807,21.846529 20.2415465,21.6515612 L14.046238,15.4655392 C12.784921,16.4282365 11.2092318,17 9.5,17 C5.35786438,17 2,13.6421356 2,9.5 C2,5.35786438 5.35786438,2 9.5,2 C13.6421356,2 17,5.35786438 17,9.5 C17,11.2109915 16.4270586,12.7881654 15.4625645,14.0501328 Z M15,9.5 C15,12.5375661 12.5375661,15 9.5,15 C6.46243388,15 4,12.5375661 4,9.5 C4,6.46243388 6.46243388,4 9.5,4 C12.5375661,4 15,6.46243388 15,9.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Preview-10" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Checkout-Payment-Information" transform="translate(-1053.000000, -45.000000)">
+            <g id="Search" transform="translate(1051.000000, 43.000000)">
+                <g id="2.-Icon-/-1.-UI-/-2.-Special-/-ic_search">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="search"></g>
+                    <g id="3.-Color-/-2.-Gray-/-2.-Gray-20" mask="url(#mask-2)" fill="#333333" fill-rule="evenodd">
+                        <rect id="Gray-20" x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

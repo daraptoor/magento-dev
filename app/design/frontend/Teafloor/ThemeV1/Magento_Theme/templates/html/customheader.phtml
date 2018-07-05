@@ -1,0 +1,62 @@
+<div class="innerHeader">
+    <div class="headerMain">
+
+        <div class="hBox menulogo ">
+            <a href="<?php echo $this->getBaseUrl();?>"><img src="<?php echo $block->getLayout()->getBlock('logo')->getLogoSrc(); ?>" 
+            alt="<?php echo $block->getLayout()->getBlock('logo')->getLogoAlt(); ?>"
+            height="<?php echo $block->getLayout()->getBlock('logo')->getLogoHeight(); ?>"
+            width="<?php echo $block->getLayout()->getBlock('logo')->getLogoWidth(); ?>"
+            ></a>
+        </div>
+        <div class="hBox menuBox">
+            <?php
+
+                echo $this->getLayout()->createBlock("Magento\Theme\Block\Html\Topmenu")->setTemplate("Magento_Theme::html/topmenu.phtml")->toHtml();
+
+            ?>
+        </div>
+        <div class="hBox menuBoxSide">
+            <a class="saleBox">    
+                <img src="<?php echo $block->getViewFileUrl('images/header/Sale.svg') ?>" > Sale
+            </a>
+        </div>
+        <div class="hBox menuIcons">
+            <!-- menu search -->
+            
+            <!-- menu search end -->
+            <a class="miSearch">    
+                <img src="<?php echo $block->getViewFileUrl('images/header/Search.svg') ?>" onClick="toggleSearch('miSearchBox');" >
+            </a>
+            <a class="miBag" href="<?php echo $this->getBaseUrl();?>checkout/cart/">    
+                <img src="<?php echo $block->getViewFileUrl('images/header/ShoppingBag.svg') ?>" >
+                <span><?php
+                    $helper = $this->helper('\Magento\Checkout\Helper\Cart');
+                    echo $helper->getItemsCount();
+                ?></span>
+            </a>
+            <a class="miMenu">    
+                <img src="<?php echo $block->getViewFileUrl('images/header/Menu.svg') ?>" >
+            </a>
+            
+        </div>
+    </div>
+    <div class="miSearchBox" id="miSearchBox" style="display: none;">
+            <form id="search_mini_form" action="<?php echo $this->getBaseUrl();?>catalogsearch/result/" method="get">
+                    <input id="search" type="text" name="q" class="input-text algolia-search-input aa-input" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="Search for products, categories, ..." role="combobox" aria-autocomplete="list" aria-expanded="false" aria-labelledby="search" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">
+                    <span id="algolia-glass" class="magnifying-glass" width="24" height="24"></span>
+            </form>
+    </div>
+
+    <?php 
+    
+    $currentUrl = $this->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]);
+
+    if($currentUrl == $this->getBaseUrl()){
+        $sliderBlock = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('bannerHome')->toHtml();
+        echo html_entity_decode($sliderBlock);
+    }
+    
+?>
+</div>
+
+

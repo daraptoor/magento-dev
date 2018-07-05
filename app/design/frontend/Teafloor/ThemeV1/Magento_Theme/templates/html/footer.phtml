@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="footer-container">
+    <div class="footer">
+        <hr class="footerHR">
+        <div class="footerBox1">
+        <?php $footerBox1 = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footerBox1')->toHtml();
+            echo html_entity_decode($footerBox1);
+        ?>
+        </div>
+        <div style="clear:both;"></div>
+        <hr class="footerHR">
+        <div class="footerBox2">
+        <?php $footerMiddle = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footerMiddle')->toHtml();
+            echo html_entity_decode($footerMiddle);
+         ?>
+         </div>
+        <div style="clear:both;"></div>
+        <hr class="footerHR">
+        <div class="footerBox3">
+        <?php $footerBottom = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footerBottom')->toHtml();
+            echo html_entity_decode($footerBottom);
+         ?>
+        </div>
+    </div>
+</div>

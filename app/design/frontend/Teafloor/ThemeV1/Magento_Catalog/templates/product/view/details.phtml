@@ -1,0 +1,119 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
+    <div class="product info detailed">
+        <?php $layout = $block->getLayout(); ?>
+        <div class="product data items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+
+
+             <!--Custom code added START-->
+             <?php 
+            $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+            $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+            $productz = $objectManager->create('Magento\Catalog\Model\Product')->load($product->getId());
+            ?> 
+            <div class="dividerTeaFloor" style="clear: both;"></div>
+            <div class="conCenter">
+            <h3 class="pageTitle">Know it, before you pour it.</h3>
+            <p class="pageSubTitle">Hand crafted special Tea and Teaware</p>
+            </div>
+            <div class="productGrid">
+
+            <?php
+            // Dry Leafs
+            $dry_leaf_image = $product->getCustomAttribute( 'dry_leaf_image' );
+            $dry_leaf_imageURL = $this->helper('Magento\Catalog\Helper\Image')->init($product, 'dry_leaf_image')->setImageFile($dry_leaf_image->getValue());
+            if(!empty($dry_leaf_imageURL->getURL()) && !empty($productz->getData('dry_leaf_text'))){ ?>
+                <div class="innerProductWrapper">
+                    <div class="innerProductImg"><img src="<?php echo $dry_leaf_imageURL->getURL();?>" alt="test"></div>
+                    <div class="innerProductTitle"><h4>Dry Leaf</h4><p><?php echo $productz->getData('dry_leaf_text');?></p></div>
+                </div>
+            <?php } ?>
+
+            <?php
+            // Dry Leafs
+            $infusion_image = $product->getCustomAttribute( 'infusion_img' );
+            $infusion_imageURL = $this->helper('Magento\Catalog\Helper\Image')->init($product, 'infusion_img')->setImageFile($infusion_image->getValue());
+            if(!empty($infusion_imageURL->getURL()) && !empty($productz->getData('infusion'))){ ?>
+                <div class="innerProductWrapper">
+                    <div class="innerProductImg"><img src="<?php echo $infusion_imageURL->getURL();?>" alt="test"></div>
+                    <div class="innerProductTitle"><h4>Infusion</h4><p><?php echo $productz->getData('infusion');?></p></div>
+                </div>
+            <?php } ?>
+
+            <?php
+            // Dry Leafs
+            $liquor_img = $product->getCustomAttribute( 'liquor_img' );
+            $liquor_imageURL = $this->helper('Magento\Catalog\Helper\Image')->init($product, 'liquor_img')->setImageFile($liquor_img->getValue());
+            if(!empty($liquor_imageURL->getURL()) && !empty($productz->getData('liquor'))){ ?>
+                <div class="innerProductWrapper">
+                    <div class="innerProductImg"><img src="<?php echo $liquor_imageURL->getURL();?>" alt="test"></div>
+                    <div class="innerProductTitle"><h4>Liquor</h4><p><?php echo $productz->getData('liquor');?></p></div>
+                </div>
+            <?php } ?>
+            </div>
+            <br>
+            <div class="dividerTeaFloor"></div>
+            <br>
+            <div class="conCenter">
+                <h3 class="pageTitle">Steeping Notes</h3>
+                <p class="pageSubTitle">Hand crafted special Tea and Teaware</p>
+            </div>
+
+            <div class="productFoot">
+                <div class="productFootInner">
+                    <h5>Details</h5>
+                    <p><?php echo $productz->getData('details_for_product');?></p>
+                </div>
+                <div class="productFootInner">
+                    <h5>Ingredients</h5>
+                    <p><?php echo $productz->getData('ingredients_product');?></p>
+                </div>
+                <div class="productFootInner">
+                    <h5>Pairing Notes</h5>
+                    <p><?php echo $productz->getData('pairing_notes_products');?></p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="dividerTeaFloor"></div>
+            <br>
+            <!--Custom code added END-->
+
+
+
+            <?php foreach ($detailedInfoGroup as $name):?>
+                <?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                ?>
+                <div class="data item title"
+                     aria-labeledby="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title"
+                     data-role="collapsible" id="tab-label-<?= /* @escapeNotVerified */ $alias ?>">
+                    <a class="data switch"
+                       tabindex="-1"
+                       data-toggle="switch"
+                       href="#<?= /* @escapeNotVerified */ $alias ?>"
+                       id="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title">
+                        <?= /* @escapeNotVerified */ $label ?>
+                    </a>
+                </div>
+                <div class="data item content" id="<?= /* @escapeNotVerified */ $alias ?>" data-role="content">
+                    <?= /* @escapeNotVerified */ $html ?>
+                </div>
+            <?php endforeach;?>
+           
+        </div>
+    </div>
+<?php endif; ?>
