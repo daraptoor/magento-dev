@@ -1,0 +1,95 @@
+<?php
+
+/** @var \Algolia\AlgoliaSearch\Block\Instant\Hit $block */
+
+$priceKey = $block->getPriceKey();
+
+$origFormatedVar = 'price' . $priceKey . '_original_formated';
+
+?>
+
+<script type="text/template" id="instant-hit-template">
+    <div class="col-md-4 col-sm-6">
+        <div class="result-wrapper">
+            <a href="{{url}}" class="result" data-objectid="{{objectID}}" data-position="{{__position}}">
+                <div class="result-content">
+                    <div class="result-thumbnail">
+                        {{#image_url}}<img src="{{{ image_url }}}" />{{/image_url}}
+                        {{^image_url}}<span class="no-image"></span>{{/image_url}}
+                    </div>
+                    <div class="result-sub-content">
+                        <h3 class="result-title text-ellipsis">
+                            {{{ _highlightResult.name.value }}}
+                        </h3>
+                        <div class="ratings">
+                            <div class="result-sub-content">
+                                
+
+                                <div class="price">
+                                    <div class="price-wrapper">
+                                        <div>
+                                            <span class="after_special
+                                                    {{#<?php echo $block->escapeHtml($origFormatedVar); ?>}}
+                                                        promotion
+                                                    {{/<?php echo $block->escapeHtml($origFormatedVar); ?>}}">
+                                                {{price<?php echo $block->escapeHtml($priceKey); ?>_formated}}
+                                            </span>
+
+                                            {{#<?php echo $block->escapeHtml($origFormatedVar); ?>}}
+                                                <span class="before_special">
+                                                    {{<?php echo $block->escapeHtml($origFormatedVar); ?>}}
+                                                </span>
+                                            {{/<?php echo $block->escapeHtml($origFormatedVar); ?>}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-reviews-summary short">
+                                    <div class="rating-summary">
+                                        <span class="label"><span>Rating:</span></span>
+
+                                        {{#rating_summary}}
+
+                                        <div class="rating-result" title="{{rating_summary}}%">
+                                            <span style="width:{{rating_summary}}%">
+                                                <span>{{rating_summary}}%</span>
+                                            </span>
+                                        </div>
+
+                                        {{/rating_summary}}
+                                        {{^rating_summary}}
+
+                                        <div class="rating-result vhidden" title="0%">
+                                            <span style="width:0%">
+                                                <span>0%</span>
+                                            </span>
+                                        </div>
+
+                                        {{/rating_summary}}
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <div class="result-description text-ellipsis">{{{ _highlightResult.description.value }}}</div>
+
+                        {{#isAddToCartEnabled}}
+                        {{#in_stock}}
+                        <form data-role="tocart-form" action="{{ addToCart.action }}" method="post">
+                            <input type="hidden" name="product" value="{{objectID}}">
+                            <input type="hidden" name="uenc" value="{{ addToCart.uenc }}">
+                            <input name="form_key" type="hidden" value="{{ addToCart.formKey }}">
+                            <button type="submit" title="Add to Cart" class="action tocart primary" data-objectid="{{objectID}}" data-position="{{__position}}">
+                                <span>Add to Bag</span>
+                            </button>
+                        </form>
+                        {{/in_stock}}
+                        {{/isAddToCartEnabled}}
+                    </div>
+                </div>
+                <div class="algolia-clearfix"></div>
+            </a>
+        </div>
+    </div>
+</script>

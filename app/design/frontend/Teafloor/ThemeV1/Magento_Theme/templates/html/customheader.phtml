@@ -50,12 +50,25 @@
     <?php 
     
     $currentUrl = $this->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]);
+    @$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    @$category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
 
     if($currentUrl == $this->getBaseUrl()){
         $sliderBlock = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('bannerHome')->toHtml();
         echo html_entity_decode($sliderBlock);
+    }elseif($category){
+        //category images
+        @$_imgUrl = $category->getImageUrl();
+        @$urlKey =  $category->getUrlKey();
+        if($category && $_imgUrl){
+            //$urlKey =  $category->getUrlKey();
+            echo "<div class='catBanner'><img src='".$_imgUrl."' alt='".$block->escapeHtml($category->getName())."' title='".$block->escapeHtml($category->getName())."'> </div>";
+        }
+    }else{
+        
     }
     
+
 ?>
 </div>
 

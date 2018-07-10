@@ -9,10 +9,21 @@ require(['jquery', 'jquery/ui'], function($j){
             $j("#portfolio").fadeTo(300, 1);
         }, 300);
 
-    }); 
+    });
 });
 
+// require(['jquery','js/jquery.fancybox.min'],function(jQuery){
 
+
+//         jQuery('[data-fancybox="images"]').fancybox({
+//             buttons : [
+//               'share',
+//               'thumbs',
+//               'close'
+//             ]
+//           });
+
+// });
 
 function toggleSearch(id){
     var e = document.getElementById(id);

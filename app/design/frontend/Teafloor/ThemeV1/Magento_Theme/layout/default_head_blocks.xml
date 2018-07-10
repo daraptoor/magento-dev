@@ -1,9 +1,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamesppaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" >
 <head>
 <css src="css/custom.css" />
+<css src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" src_type="url"/>
 
 <!-- <script src="js/jquery-3.3.1.min.js" /> -->
-<script src="js/custom.js" />
 
+<script src="js/custom.js" />
 </head>
 </page>

@@ -15,11 +15,11 @@
 <form action="<?= $block->escapeUrl($block->getAction()) ?>" class="review-form" method="post" id="review-form" data-role="product-review-form" data-bind="scope: 'review-form'">
     <?= $block->getBlockHtml('formkey') ?>
     <?= $block->getChildHtml('form_fields_before') ?>
-    <fieldset class="fieldset review-fieldset" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>">
-        <legend class="legend review-legend"><span><?= $block->escapeHtml(__("You're reviewing:")) ?></span><strong><?= $block->escapeHtml($block->getProductInfo()->getName()) ?></strong></legend><br />
+    <fieldset class="fieldset review-fieldset text-align-left" data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>">
+        <legend class="legend review-legend"><span><?= $block->escapeHtml(__("You're reviewing:")) ?></span><strong class="textYellow"><?= $block->escapeHtml($block->getProductInfo()->getName()) ?></strong></legend><br />
         <?php if ($block->getRatings() && $block->getRatings()->getSize()): ?>
         <span id="input-message-box"></span>
-        <fieldset class="field required review-field-ratings">
+        <fieldset class="field required review-field-ratings ">
             <legend class="label"><span><?= $block->escapeHtml(__('Your Rating')) ?></span></legend><br/>
             <div class="control">
                 <div class="nested" id="product-review-table">
@@ -72,12 +72,13 @@
                 <textarea name="detail" id="review_field" cols="5" rows="3" data-validate="{required:true}" data-bind="value: review().detail"></textarea>
             </div>
         </div>
-    </fieldset>
-    <div class="actions-toolbar review-form-actions">
-        <div class="primary actions-primary">
-            <button type="submit" class="action submit primary"><span><?= $block->escapeHtml(__('Submit Review')) ?></span></button>
+        <div class="actions-toolbar review-form-actions">
+            <div class="primary actions-primary">
+                <button type="submit" class="action submit primary wrAriview"><span><?= $block->escapeHtml(__('Submit Review')) ?></span></button>
+            </div>
         </div>
-    </div>
+    </fieldset>
+    
 </form>
 <script type="text/x-magento-init">
 {

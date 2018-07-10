@@ -218,8 +218,8 @@ switch ($type = $block->getType()) {
                                         <div class="actions-primary">
                                             <?php if ($_item->isSaleable()): ?>
                                                 <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
-                                                    <button class="action tocart primary" data-mage-init='{"redirectUrl": {"url": "<?= /* @escapeNotVerified */ $block->getAddToCartUrl($_item) ?>"}}' type="button" title="<?= /* @escapeNotVerified */ __('Add to Cart') ?>">
-                                                        <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
+                                                    <button class="action tocart primary" data-mage-init='{"redirectUrl": {"url": "<?= /* @escapeNotVerified */ $block->getAddToCartUrl($_item) ?>"}}' type="button" title="<?= /* @escapeNotVerified */ __('Add to Bag') ?>">
+                                                        <span><?= /* @escapeNotVerified */ __('Add to Bag') ?></span>
                                                     </button>
                                                 <?php else: ?>
                                                     <?php $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
@@ -227,8 +227,8 @@ switch ($type = $block->getType()) {
                                                     ?>
                                                     <button class="action tocart primary"
                                                             data-post='<?= /* @escapeNotVerified */ $postData ?>'
-                                                            type="button" title="<?= /* @escapeNotVerified */ __('Add to Cart') ?>">
-                                                        <span><?= /* @escapeNotVerified */ __('Add to Cart') ?></span>
+                                                            type="button" title="<?= /* @escapeNotVerified */ __('Add to Bag') ?>">
+                                                        <span><?= /* @escapeNotVerified */ __('Add to Bag') ?></span>
                                                     </button>
                                                 <?php endif; ?>
                                             <?php else: ?>

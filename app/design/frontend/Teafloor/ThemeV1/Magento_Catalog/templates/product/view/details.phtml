@@ -18,6 +18,8 @@
             $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
             $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
             $productz = $objectManager->create('Magento\Catalog\Model\Product')->load($product->getId());
+            if($productz->getAttributeSetId() == 4){
+
             ?> 
             <div class="dividerTeaFloor" style="clear: both;"></div>
             <div class="conCenter">
@@ -85,6 +87,48 @@
             <br>
             <div class="dividerTeaFloor"></div>
             <br>
+            <?php                 
+            }elseif($productz->getAttributeSetId() == 11){ ?>
+                <div class="dividerTeaFloor" style="clear: both;"></div>
+                <div class="conCenter">
+                <h3 class="pageTitle">Inside the Box</h3>
+                <p class="pageSubTitle">Hand crafted special Tea and Teaware</p>
+                </div>
+                <div class="productGridCol">
+                    <?php 
+                    $itb_total_variation = $productz->getData( 'itb_total_variation' );
+                    $attr = $product->getResource()->getAttribute('itb_total_variation');
+                    if ($attr->usesSource()) {
+                        $optionCount = $attr->getSource()->getOptionText($itb_total_variation);
+                    }
+                    for ($i=1; $i <= $optionCount; $i++) { ?>
+                        <div class="boxItem" >
+                            <div class="boxItemImage">
+                                <?php
+                                    $itb_title = $product->getCustomAttribute( 'itb_image_'.$i );
+                                    $itb_title_imageURL = $this->helper('Magento\Catalog\Helper\Image')->init($product, 'itb_image_'.$i)->setImageFile($itb_title->getValue());
+                                ?>
+                                <img src="<?php echo $itb_title_imageURL->getURL(); ?>" alt="">
+                            </div>
+                            <div class="boxItemTitle">
+                                <?php echo $productz->getData( 'itb_title_'.$i ); ?>
+                            </div>
+                            <div class="boxItemGram">
+                                <?php echo $productz->getData( 'itb_weight_'.$i ); ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    
+                    
+                </div>
+                <br>
+            <br>
+            <div class="dividerTeaFloor"></div>
+            <br>
+            <?php }else{
+
+            }
+            ?>
             <!--Custom code added END-->
 
 
@@ -122,6 +166,38 @@
     <div class="conCenter">
         <h3 class="pageTitle">As Seen On Instagram</h3>
     </div>
+    <?php 
+    $instImg = preg_split('/\r\n|[\r\n]/',$productz->getData('instagram'));
+    print_r($instImg);
+    ?>
+    
+
+<p class="imglist" style="max-width: 1000px;">
+  <a href="https://source.unsplash.com/juHayWuaaoQ/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/juHayWuaaoQ/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/eWFdaPRFjwE/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/eWFdaPRFjwE/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/i2KibvLYjqk/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/i2KibvLYjqk/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/RFgO9B_OR4g/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/RFgO9B_OR4g/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/7bwQXzbF6KE/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/7bwQXzbF6KE/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/NhU0nUR7920/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/NhU0nUR7920/240x160" />
+  </a>
+</p>
+
 
 
      <br>

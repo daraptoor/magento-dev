@@ -702,19 +702,25 @@ span.shareProd-1 a {
   display: flex;
   justify-content: space-between;
 }
-.wrAriview{
-  background: #ffb000;
-  padding: 10px 25px;
-  font-family: Futura;
-  font-size: 16px;
+.product-reviews-summary.empty{
+  display: flex;
+  justify-content: space-around;
+}
+.wrAriview , .action.submit.primary, .action.tocart.primary {
+  background: #ffb000 !important;
+  padding: 10px 25px !important;
+  font-family: Futura !important;
+  font-size: 16px !important;
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.25;
+  line-height: 1.25 !important;
   letter-spacing: 2px;
   text-align: center;
   color: #ffffff !important;
-    text-decoration: none !important;
+  text-decoration: none !important;
+  border-radius: 0;
+  border: none !important;
 }
 .reviewSpan {
   font-family: Futura;
@@ -729,8 +735,14 @@ span.shareProd-1 a {
 .alignLeft{
   float: left;
 }
+.text-align-left{
+  text-align: left;
+}
 .hidden{
   display: none !important;
+}
+.vhidden{
+  visibility: hidden !important;
 }
 .review-ratings{
   max-width: 100%;
@@ -743,13 +755,128 @@ span.shareProd-1 a {
 .rating-summary.item{
   text-align: left;
 }
+.field.review-field-nickname{
+  width: 49%;
+    float: left;
+}
+.field.review-field-summary{
+  width: 49%;
+    float: left;
+    margin-left: 2%;
+}
+.fieldset.review-fieldset{
+  margin: 40px 0 40px 0;
+}
+.review-form input{
+  border: 1px solid #dde3e8;
+  height: 54px;
+}
+.review-form label{
+  font-family: Futura;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #788995;
+}
+.textYellow{
+  font-size: 22px;
+  line-height: 1.36;
+  color: #ffb000;
+}
+.catBanner img{
+  width: 100%;
+}
+.catalog-category-view .breadcrumbs{
+  display: none;
+}
+.catBreadcrumbs .breadcrumbs{
+  display: block;
+  padding: 0px;
+}
+#algolia-right-container #instant-search-bar-container {
+  display: none;
+}
+#algolia_instant_selector .result{
+  border: none  !important;
+}
+#algolia_instant_selector .rating-summary{
+  width: 100%;
+}
+#algolia_instant_selector .result .result-thumbnail img {
+
+  height: 200px !important;
+
+}
+.rating-summary .rating-result>span:before{
+  color: #35cc62;
+}
+.price-wrapper{
+  padding-top: 6px;
+}
+.price-wrapper .after_special{
+  color:#4a4a4a;
+}
+#algolia_instant_selector .facet {
+  border: none !important;
+}
+#algolia_instant_selector .facet .name {
+  padding: 4px 8px;
+  font-weight: 500;
+  background-color: #f4f4f400 !important;
+  color: #000000 !important;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 16px !important;
+}
+#algolia_instant_selector .hits .infos {
+  background: #f4f4f400 !important;
+}
+.productGridCol{
+  display: flex;
+  flex-wrap: wrap;
+}
+.boxItem{
+  margin: 20px;
+  flex-basis: 30%;
+}
+.boxItemTitle {
+  font-family: Futura;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+.boxItemGram {
+  font-family: Futura;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9b9b9b;
+}
+
+
+
+
 
 
 
 
 
 /* Responsive  */
-
+@media (min-width: 640px){
+  .review-form {
+      max-width: 840px;
+  }
+}
 @media screen and (max-width: 768px) {
   .menuBox,
   .menuBoxSide {
