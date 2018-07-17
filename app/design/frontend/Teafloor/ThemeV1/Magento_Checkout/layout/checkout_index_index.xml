@@ -5,7 +5,7 @@
  * See COPYING.txt for license details.
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
             <block class="Magento\Checkout\Block\Onepage" name="checkout.root" template="Magento_Checkout::onepage.phtml" cacheable="false">
@@ -89,7 +89,8 @@
                                                             </item>
                                                         </item>
                                                     </item>
-                                                    <!-- The new step you add -->
+
+                                            <!-- The new step you add -->
                                             <item name="my-new-step" xsi:type="array">
                                                 <item name="component" xsi:type="string">Magento_Checkout/js/view/my-step-view</item>
                                                     <!--To display step content before shipping step "sortOrder" value should be < 1-->
@@ -97,9 +98,12 @@
                                                     <!--To display step content after payment step "sortOrder" > 2 -->
                                                 <item name="sortOrder" xsi:type="string">1</item>
                                                 <item name="children" xsi:type="array">
+                                                
                                                     <!--add here child component declaration for your step-->
                                                 </item>
                                             </item>
+
+
                                                     <item name="shippingAddress" xsi:type="array">
                                                         <item name="config" xsi:type="array">
                                                             <item name="deps" xsi:type="array">
