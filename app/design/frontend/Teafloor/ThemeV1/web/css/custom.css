@@ -863,11 +863,152 @@ span.shareProd-1 a {
   color: #9b9b9b;
 }
 
+.instagramImageGallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.instaAnchor{
+  margin: 10px;
+  flex-basis: 21%;
+}
+.instaImg{
+  height: 250px;
+  max-width: 100%;
+}
+.opc-progress-bar-item {
+  width: 265px !important;
+}
+.opc-progress-bar-item:first-child:before, .opc-progress-bar-item:last-child:before {
+  border-radius: 0px 0px 0px 0px !important;
+}
+.opc-progress-bar-item._active:before {
+  background: #f9c833 !important;
+  border-color: #f9c833 !important;
+  content: '' !important;
+}
+.opc-progress-bar-item._active>span:after {
+  border-color: #f9c833 !important;
+  content: '' !important;
+  font-family: 'luma-icons';
+}
+.opc-progress-bar-item:before {
+  background: #e8e0ce !important;
+  border: none !important;
+  top: 13px !important;
+  transition: background .3s !important;
+  content: '' !important;
+  height: 40px !important;
+  left: 0 !important;
+  position: absolute !important;
+  width: 100% !important;
+  z-index: 9 !important;
+}
+.opc-progress-bar-item>span {
+  display: inline-block !important;
+  padding-top: 19px !important;
+  width: 100% !important;
+  word-wrap: break-word !important;
+  color: #666 !important;
+  font-weight: 300 !important;
+  font-size: 1.8rem !important;
+  z-index: 99 !important;
+  position: relative !important;
+}
+.opc-progress-bar-item>span:before, .opc-progress-bar-item>span:after {
+  background: #e4e4e4;
+  border: none !important;
+  height: 0px !important;
+  margin-left: -19px;
+  transition: background .3s;
+  width: 0px !important;
+  border-radius: 50%;
+  content: '' !important;
+  left: 50%;
+  position: absolute;
+  top: 0;
+}
+.opc-progress-bar-item>span:after {
+  background: #fff;
+  height: 0px !important;
+  margin-left: -13px;
+  top: 6px;
+  width: 0px !important;
+  content: '' !important;
+  counter-increment: i;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.8rem;
+  position: relative;
+}
+.modal-inner-wrap .modal-content{
+  margin-top: -96.5px;
+}
+.checkout-shipping-address form .input-text , .checkout-shipping-address form select {
+  height: 54px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #dde3e8;
+}
+.action.login.primary{
+  height: 32px;
+  border-radius: 3px;
+  background-color: #ffb000;
+  box-shadow: 0 2px 7px 0 rgba(120, 137, 149, 0.26);
+  border: none;
+}
+.opc-wrapper .form-login.chckoutLoginForm{
+  max-width:100% !important;
+}
+.field .control._with-tooltip input {
+  margin-right: 10px;
+  width:100%;
+}
+.field-tooltip{
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}
+.fieldset.hidden-fields .actions-toolbar {
+  text-align: right;
+}
 
+#shipping #co-shipping-form{
+  max-width:100% !important;
+}
+#shipping #co-shipping-form #shipping-new-address-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#shipping #co-shipping-form #shipping-new-address-form div{
+  flex-basis: 49%;
+}
+#shipping fieldset.field.street.admin__control-fields.required{
+  flex-basis: 100% !important;
+  display: flex;
+}
+#shipping fieldset.field.street.admin__control-fields.required .field .field-error{
+  flex-basis: 100%;
+    position: absolute;
+    margin-top: 59px;
+}
+#shipping #co-shipping-form #shipping-new-address-form .field.street .control{
+  display: flex;
+  justify-content: space-between;
+}
+#shipping #co-shipping-form #shipping-new-address-form .field.street .control .field{
+  margin-top: 0px;
+}
+.nextBtn{
+  height: 54px;
+  border: 1px solid #ffb000 !important;
+  border-radius: 3px;
+  background-color: #ffb000 !important;
+  box-shadow: 0 2px 7px 0 rgba(120, 137, 149, 0.26);
 
-
-
-
+}
 
 
 

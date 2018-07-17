@@ -160,45 +160,37 @@
            
         </div>
     </div>
+    
+    <?php 
+    $instImg = preg_split('/\r\n|[\r\n]/',$productz->getData('instagram'));
+    //print_r($instImg);
+    if($instImg[0] != ''){
+
+    ?>
     <br>
     <div class="dividerTeaFloor"></div>
     <br>
     <div class="conCenter">
         <h3 class="pageTitle">As Seen On Instagram</h3>
     </div>
-    <?php 
-    $instImg = preg_split('/\r\n|[\r\n]/',$productz->getData('instagram'));
-    print_r($instImg);
-    ?>
+    
     
 
-<p class="imglist" style="max-width: 1000px;">
-  <a href="https://source.unsplash.com/juHayWuaaoQ/1500x1000" data-fancybox="images">
-    <img src="https://source.unsplash.com/juHayWuaaoQ/240x160" />
-  </a>
+<div class="wrapperInsta" >
+<div class="instagramImageGallery" style="disply:flex;flex-wrap: wrap;justify-content: space-between;">
+    <?php
+foreach($instImg as $imgUrl){ ?>
+        <a href="<?php echo $imgUrl;?>" data-fancybox="images" class="instaAnchor">
+            <img src="<?php echo $imgUrl;?>" alt="@teafloor" class="instaImg"/>
+        </a>
+    <?php }
+?>
+</div>
+</div>
 
-  <a href="https://source.unsplash.com/eWFdaPRFjwE/1500x1000" data-fancybox="images">
-    <img src="https://source.unsplash.com/eWFdaPRFjwE/240x160" />
-  </a>
-
-  <a href="https://source.unsplash.com/i2KibvLYjqk/1500x1000" data-fancybox="images">
-    <img src="https://source.unsplash.com/i2KibvLYjqk/240x160" />
-  </a>
-
-  <a href="https://source.unsplash.com/RFgO9B_OR4g/1500x1000" data-fancybox="images">
-    <img src="https://source.unsplash.com/RFgO9B_OR4g/240x160" />
-  </a>
-
-  <a href="https://source.unsplash.com/7bwQXzbF6KE/1500x1000" data-fancybox="images">
-    <img src="https://source.unsplash.com/7bwQXzbF6KE/240x160" />
-  </a>
-
-  <a href="https://source.unsplash.com/NhU0nUR7920/1500x1000" data-fancybox="images">
-    <img src="https://source.unsplash.com/NhU0nUR7920/240x160" />
-  </a>
-</p>
-
-
+<?php
+}
+?>
 
      <br>
     <div class="dividerTeaFloor"></div>

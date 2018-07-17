@@ -73,9 +73,7 @@
         "sjparkinson/static-review": "~4.1",
         "ramsey/uuid": "~3.7.3",
         "algolia/algoliasearch-magento-2": "^1.7",
-        "vpietri/adm-quickdevbar": "^0.1.13",
-        "weltpixel/m2-weltpixel-backend": "~1.0 | master",
-        "weltpixel/m2-weltpixel-lazyload-theme": "~1.0 | master"
+        "vpietri/adm-quickdevbar": "^0.1.13"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.2.0",

@@ -12,18 +12,18 @@ require(['jquery', 'jquery/ui'], function($j){
     });
 });
 
-// require(['jquery','js/jquery.fancybox.min'],function(jQuery){
+require(['jquery','js/jquery.fancybox.min'],function(jQuery){
 
 
-//         jQuery('[data-fancybox="images"]').fancybox({
-//             buttons : [
-//               'share',
-//               'thumbs',
-//               'close'
-//             ]
-//           });
+        jQuery('[data-fancybox="images"]').fancybox({
+            buttons : [
+              'share',
+              'thumbs',
+              'close'
+            ]
+          });
 
-// });
+});
 
 function toggleSearch(id){
     var e = document.getElementById(id);
